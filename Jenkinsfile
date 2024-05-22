@@ -15,7 +15,7 @@ node {
     }
     stage("Deployment") {
       sh "chmod +x ./gradlew"
-      sh 'nohup ./gradlew bootRun -Dserver.port=8080 &'
-    }
-  }
+      sh 'nohup ./gradlew bootRun -Dserver.port=8080 &'
+    }
+  }
 }
