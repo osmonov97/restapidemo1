@@ -1,10 +1,10 @@
 node {
   def dockerHubRepo = 'erlanosmonov97@gmail.com/erlanio97'
-  def dockerHubCredentialsId = 'DockerHub_ID'
+  def dockerHubCredentialsId = 'DockerHUB_ID'
 
   stage("Clone the project") {
     git branch: 'main', url: 'https://github.com/osmonov97/restapidemo1.git'
-    }
+  }
 
   stage("Compilation") {
     sh "chmod +x ./gradlew"
@@ -19,7 +19,7 @@ node {
     stage("Deployment") {
       sh "chmod +x ./gradlew"
       sh 'nohup ./gradlew bootRun -Dserver.port=8080 &'
-      sh 'echo #!Erlan123! | sudo docker login -u erlanosmonov97@gmail.com --password-stdin'
+      sh 'echo #!asdf2580 | sudo docker login -u erlanosmonov97@gmail.com --password-stdin'
       sh 'sudo docker build -t erlanio97/restapidemo:1.0 .'
     }
     stage('Push Docker Image') {
@@ -30,7 +30,6 @@ node {
                 image.push('1.0')
             }
         }
-
     }
   }
 }
