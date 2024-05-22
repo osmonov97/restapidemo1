@@ -1,6 +1,6 @@
 node {
   def dockerHubRepo = 'erlanosmonov97@gmail.com/erlanio97'
-  def dockerHubCredentialsId = 'erlanio97'
+  def dockerHubCredentialsId = 'erlan'
 
   stage("Clone the project") {
     git branch: 'main', url: 'https://github.com/osmonov97/restapidemo1.git'
